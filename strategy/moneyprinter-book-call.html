@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>moneyprinter.ai | Book your strategy call</title>
+<!-- Post-plan conversion step. Per June 23 meeting: plan = lead magnet -> qualified strategy call where a strategist shows how to apply the plan ("on the call you break down how to actually use the AI"). Metric = cost per qualified call. Slot picker is a placeholder; wire to real Calendly + qualification gate before live. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Space+Mono:wght@400;700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}html,body{margin:0;padding:0;}
+  @keyframes mp-bob{from{transform:translateY(0)}to{transform:translateY(-4px)}}
+  @keyframes mp-blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.12)}}
+  @keyframes mp-scan{from{background-position-y:0}to{background-position-y:6px}}
+  .slot{border:2px solid #241f1a;background:#efe9da;box-shadow:4px 4px 0 rgba(36,31,26,.16);font:700 14px 'Space Mono',monospace;color:#241f1a;padding:13px 10px;cursor:pointer;transition:.1s;text-align:center;}
+  .slot:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 rgba(36,31,26,.16);background:#dff0e6;border-color:#0c8f66;}
+  .gbtn{background:#0c8f66;color:#f4efe0;border:2px solid #0a7355;box-shadow:6px 6px 0 #1d5e47;font:700 16px 'Space Mono',monospace;letter-spacing:2px;padding:18px 38px;cursor:pointer;transition:.1s;}
+  .gbtn:hover{transform:translate(2px,2px);box-shadow:4px 4px 0 #1d5e47;}
+  @media(max-width:640px){h1{font-size:34px !important;}.cols{grid-template-columns:1fr !important;}}
+</style>
+</head>
+<body>
+<div style="min-height:100vh;display:flex;flex-direction:column;background-color:#e9e3d3;background-image:repeating-linear-gradient(45deg,rgba(36,31,26,.04) 0 1px,transparent 1px 9px),repeating-linear-gradient(-45deg,rgba(36,31,26,.03) 0 1px,transparent 1px 9px);font-family:'Hanken Grotesk',system-ui,sans-serif;color:#241f1a;position:relative;overflow:hidden;">
+
+  <div style="position:absolute;left:0;right:0;bottom:0;height:42%;background-image:radial-gradient(rgba(36,31,26,.13) 1px,transparent 1.4px);background-size:12px 12px;-webkit-mask-image:linear-gradient(transparent,#000);mask-image:linear-gradient(transparent,#000);pointer-events:none;z-index:0;"></div>
+
+  <!-- top bar -->
+  <div style="position:relative;z-index:3;display:flex;align-items:center;justify-content:center;height:62px;padding:0 56px;border-bottom:2px solid #241f1a;">
+    <div style="display:flex;align-items:flex-start;gap:5px;">
+      <span style="font:800 22px 'Hanken Grotesk',sans-serif;letter-spacing:-.8px;color:#241f1a;">money<span style="color:#0c8f66;">printer</span><span style="color:#06B6D4;">.ai</span></span>
+      <span style="color:#06B6D4;font-size:13px;line-height:1;margin-top:2px;">&#10022;</span>
+    </div>
+  </div>
+
+  <div style="position:relative;z-index:2;flex:1;display:flex;align-items:center;justify-content:center;padding:44px 40px 80px;">
+    <div style="width:100%;max-width:1000px;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;" class="cols">
+
+      <!-- left: the pitch -->
+      <div>
+        <div style="font:700 12px 'Space Mono',monospace;letter-spacing:2.5px;color:#c0512a;">YOUR PLAN IS BUILT &middot; ONE STEP LEFT</div>
+        <h1 style="margin:14px 0 0;font-family:'Libre Caslon Display',Georgia,serif;font-weight:400;font-size:50px;line-height:1.02;letter-spacing:-1.5px;">See exactly how to <span style="color:#0c8f66;">run it.</span></h1>
+        <p style="max-width:460px;margin:20px 0 0;font-size:18px;line-height:1.55;color:#4a4038;">Book a free call with a strategist. They walk you through how to apply your plan to your business, and build your first system with you on the call. You leave with a working piece, not a pitch.</p>
+
+        <div style="margin-top:30px;display:flex;flex-direction:column;gap:11px;">
+          <div style="display:flex;gap:13px;align-items:flex-start;"><span style="flex:none;width:22px;height:22px;border:2px solid #241f1a;background:#0c8f66;display:flex;align-items:center;justify-content:center;font:700 12px 'Space Mono',monospace;color:#f4efe0;">1</span><span style="font-size:15px;line-height:1.5;color:#241f1a;">A strategist breaks down how to actually apply each move to <strong>your</strong> business.</span></div>
+          <div style="display:flex;gap:13px;align-items:flex-start;"><span style="flex:none;width:22px;height:22px;border:2px solid #241f1a;background:#0c8f66;display:flex;align-items:center;justify-content:center;font:700 12px 'Space Mono',monospace;color:#f4efe0;">2</span><span style="font-size:15px;line-height:1.5;color:#241f1a;">You watch the agent <strong>build your first system live</strong> on the call.</span></div>
+          <div style="display:flex;gap:13px;align-items:flex-start;"><span style="flex:none;width:22px;height:22px;border:2px solid #241f1a;background:#0c8f66;display:flex;align-items:center;justify-content:center;font:700 12px 'Space Mono',monospace;color:#f4efe0;">3</span><span style="font-size:15px;line-height:1.5;color:#241f1a;">No card, no obligation. The plan is yours to keep either way.</span></div>
+        </div>
+
+        <div style="margin-top:28px;border:2px solid #0a7355;background:#dff0e6;padding:13px 18px;font:13px 'Space Mono',monospace;line-height:1.6;color:#1d5e47;">&#9679; Your plan is already in your inbox. This call is where it becomes real.</div>
+      </div>
+
+      <!-- right: slot picker -->
+      <div>
+        <div id="picker" style="border:2px solid #241f1a;background:#efe9da;box-shadow:9px 9px 0 #5e2d2d;">
+          <div style="background:#5e2d2d;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;">
+            <span style="font:700 12px 'Space Mono',monospace;letter-spacing:1.5px;color:#e9e3d3;">&#9679; STRATEGY CALL &middot; 20 MIN &middot; FREE</span>
+            <span style="font:700 11px 'Space Mono',monospace;color:#E5B567;">3 SLOTS LEFT</span>
+          </div>
+          <div style="padding:22px;">
+            <div style="font:700 11px 'Space Mono',monospace;letter-spacing:2px;color:#8a7e64;">PICK A TIME</div>
+            <div id="days" style="margin-top:14px;display:flex;flex-direction:column;gap:18px;"></div>
+          </div>
+        </div>
+        <div style="margin-top:13px;text-align:center;font:11px 'Space Mono',monospace;color:#9a8e74;">We build each plan hands-on &middot; limited build slots per week</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- robot -->
+  <div style="position:fixed;bottom:26px;right:30px;z-index:30;width:80px;animation:mp-bob 1.9s steps(2) infinite alternate;">
+    <div style="position:relative;z-index:4;width:52px;height:8px;margin:0 auto;background:#241f1a;border:2px solid #241f1a;border-radius:3px 3px 0 0;"></div>
+    <div style="width:76px;height:58px;margin:-1px auto 0;background:#5e2d2d;border:2px solid #241f1a;border-radius:4px 4px 11px 11px;box-shadow:4px 4px 0 rgba(36,31,26,.2);padding:7px;position:relative;z-index:3;">
+      <div style="position:relative;width:100%;height:100%;background:#10201c;border:2px solid #241f1a;border-radius:3px;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;">
+        <div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(6,182,212,.16) 0 1px,transparent 1px 3px);animation:mp-scan 1.2s steps(4) infinite;pointer-events:none;"></div>
+        <div style="display:flex;gap:10px;">
+          <div style="width:11px;height:15px;background:#06B6D4;border-radius:50%;box-shadow:0 0 8px rgba(6,182,212,.6);animation:mp-blink 3.4s infinite;"></div>
+          <div style="width:11px;height:15px;background:#06B6D4;border-radius:50%;box-shadow:0 0 8px rgba(6,182,212,.6);animation:mp-blink 3.4s infinite;"></div>
+        </div>
+        <div style="width:15px;height:7px;border:2px solid #06B6D4;border-top:none;border-radius:0 0 20px 20px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const days=[
+    {d:'TUE',label:'Tue, Jun 24',times:['11:00','14:30','17:00']},
+    {d:'WED',label:'Wed, Jun 25',times:['10:00','13:00']},
+    {d:'THU',label:'Thu, Jun 26',times:['12:00','15:30','18:00']}
+  ];
+  document.getElementById('days').innerHTML=days.map(day=>`
+    <div>
+      <div style="font:700 12px 'Space Mono',monospace;color:#241f1a;margin-bottom:9px;">${day.label}</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:9px;">`+
+        day.times.map(t=>`<button class="slot" onclick="book('${day.label}','${t}')">${t}</button>`).join('')+
+      `</div>
+    </div>`).join('');
+
+  function book(label,time){
+    document.getElementById('picker').innerHTML=`
+      <div style="background:#241f1a;padding:12px 18px;font:700 12px 'Space Mono',monospace;letter-spacing:1.5px;color:#E5B567;">&#9679; YOU'RE BOOKED</div>
+      <div style="padding:34px 26px;text-align:center;">
+        <div style="width:58px;height:58px;border:2px solid #0c8f66;background:#dff0e6;display:flex;align-items:center;justify-content:center;margin:0 auto;"><svg viewBox="0 0 24 24" style="width:28px;height:28px;stroke:#0c8f66;fill:none;stroke-width:3;"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <div style="font-family:'Libre Caslon Display',Georgia,serif;font-size:28px;margin-top:18px;color:#241f1a;">${label} at ${time}</div>
+        <div style="margin-top:10px;font:13px 'Space Mono',monospace;color:#6a5f4e;line-height:1.6;">A calendar invite and your plan are on the way to your inbox.<br>Bring your business. Leave with a system.</div>
+      </div>`;
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+</script>
+</body>
+</html>

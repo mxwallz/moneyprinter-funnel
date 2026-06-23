@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>moneyprinter.ai | Your 90-day roadmap</title>
+<!-- IMPLEMENTED from claude.ai design "Moneyprinter 90-Day Roadmap.dc.html" (project: AI Money Printer Rebrand).
+     Sample plan = Nesh PT example. Numbers/credentials are illustrative; verify before any client-facing use. CLAIM = booking placeholder. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Space+Mono:wght@400;700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  @keyframes mp-bob{from{transform:translateY(0)}to{transform:translateY(-4px)}}
+  @keyframes mp-blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.12)}}
+  @keyframes mp-scan{from{background-position-y:0}to{background-position-y:6px}}
+  @keyframes mp-print{0%{transform:translateY(8px) scale(.6);opacity:0}20%{opacity:1}74%{opacity:1}100%{transform:translateY(-50px) rotate(-7deg) scale(1);opacity:0}}
+  @keyframes mp-load{from{width:0}to{width:100%}}
+  @keyframes mp-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  .sec{animation:mp-in .5s ease both;}
+  .printbtn{background:#0c8f66;color:#f4efe0;border:2px solid #0a7355;box-shadow:7px 7px 0 #1d5e47;font:700 17px 'Space Mono',monospace;letter-spacing:2px;padding:21px 44px;cursor:pointer;transition:.1s;}
+  .printbtn:hover{transform:translate(2px,2px);box-shadow:5px 5px 0 #1d5e47;}
+  .claimbtn{background:#0c8f66;color:#f4efe0;border:2px solid #19c98a;box-shadow:6px 6px 0 #0a3d2c;font:700 16px 'Space Mono',monospace;letter-spacing:2px;padding:19px 40px;cursor:pointer;transition:.1s;}
+  .claimbtn:hover{transform:translate(2px,2px);box-shadow:4px 4px 0 #0a3d2c;}
+</style>
+</head>
+<body>
+<div style="min-height:100vh;background-color:#e9e3d3;background-image:repeating-linear-gradient(45deg,rgba(36,31,26,.04) 0 1px,transparent 1px 9px),repeating-linear-gradient(-45deg,rgba(36,31,26,.03) 0 1px,transparent 1px 9px);font-family:'Hanken Grotesk',system-ui,sans-serif;color:#241f1a;">
+
+  <div style="position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;height:58px;padding:0 28px;background:#e9e3d3;border-bottom:2px solid #241f1a;">
+    <span style="font:700 11px 'Space Mono',monospace;letter-spacing:2px;color:#9a8e74;">YOUR 90-DAY PLAN</span>
+    <div style="display:flex;align-items:flex-start;gap:5px;">
+      <span style="font:800 20px 'Hanken Grotesk',sans-serif;letter-spacing:-.7px;color:#241f1a;">money<span style="color:#0c8f66;">printer</span><span style="color:#06B6D4;">.ai</span></span>
+      <span style="color:#06B6D4;font-size:12px;line-height:1;margin-top:2px;">&#10022;</span>
+    </div>
+    <span id="stepLabel" style="font:700 11px 'Space Mono',monospace;letter-spacing:2px;color:#0c8f66;">COVER</span>
+  </div>
+
+  <div style="max-width:1020px;margin:0 auto;padding:0 40px 140px;">
+
+    <!-- ============ COVER ============ -->
+    <section id="cover" style="padding:74px 0 44px;text-align:center;">
+      <div style="font:700 11px 'Space Mono',monospace;letter-spacing:3px;color:#9a8e74;">CONFIDENTIAL &middot; PREPARED FOR NESH &middot; LONDON 2026</div>
+      <div style="font:700 13px 'Space Mono',monospace;letter-spacing:3px;color:#c0512a;margin-top:30px;">YOUR INDEPENDENCE PLAN</div>
+      <h1 style="margin:16px auto 0;max-width:820px;font-family:'Libre Caslon Display',Georgia,serif;font-weight:400;font-size:72px;line-height:1.0;letter-spacing:-2px;">From top trainer to <span style="color:#0c8f66;">top brand.</span></h1>
+      <p style="max-width:600px;margin:22px auto 0;font-size:19px;line-height:1.55;color:#4a4038;">A 90-day blueprint to launch your independent business, built, run, and scaled by your AI agent doing the heavy lifting.</p>
+      <div style="display:flex;justify-content:center;gap:18px;margin-top:44px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:200px;max-width:230px;border:2px solid #241f1a;background:#efe9da;box-shadow:6px 6px 0 #5e2d2d;padding:22px 16px;">
+          <div data-count="300" data-prefix="&pound;" data-suffix="K" style="font:700 42px 'Space Mono',monospace;letter-spacing:-2px;color:#0c8f66;line-height:1;">&pound;0K</div>
+          <div style="font:700 10px 'Space Mono',monospace;letter-spacing:2px;color:#8a7e64;margin-top:8px;">YEAR-1 TARGET</div>
+        </div>
+        <div style="flex:1;min-width:200px;max-width:230px;border:2px solid #241f1a;background:#efe9da;box-shadow:6px 6px 0 #5e2d2d;padding:22px 16px;">
+          <div data-count="14" style="font:700 42px 'Space Mono',monospace;letter-spacing:-2px;color:#241f1a;line-height:1;">0</div>
+          <div style="font:700 10px 'Space Mono',monospace;letter-spacing:2px;color:#8a7e64;margin-top:8px;">DAYS TO LAUNCH</div>
+        </div>
+        <div style="flex:1;min-width:200px;max-width:230px;border:2px solid #241f1a;background:#efe9da;box-shadow:6px 6px 0 #5e2d2d;padding:22px 16px;">
+          <div data-count="80" data-suffix="%" style="font:700 42px 'Space Mono',monospace;letter-spacing:-2px;color:#241f1a;line-height:1;">0%</div>
+          <div style="font:700 10px 'Space Mono',monospace;letter-spacing:2px;color:#8a7e64;margin-top:8px;">HANDLED BY THE AGENT</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 1 · THE NUMBER ============ -->
+    <section class="sec" id="sec1" style="padding:34px 0 24px;display:none;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid #241f1a;padding-bottom:12px;">
+        <span style="font:700 12px 'Space Mono',monospace;letter-spacing:2.5px;color:#c0512a;">01 &middot; THE NUMBER</span>
+        <span style="font:700 12px 'Space Mono',monospace;letter-spacing:2px;color:#9a8e74;">&pound;300K / YEAR</span>
+      </div>
+      <h2 style="margin:24px 0 0;font-family:'Libre Caslon Display',Georgia,serif;font-weight:400;font-size:46px;line-height:1.04;letter-spacing:-1.4px;">&pound;300,000 a year.<br>Here is exactly how.</h2>
+      <p style="max-width:640px;margin:16px 0 0;font-size:18px;line-height:1.55;color:#4a4038;">Four revenue streams. At full capacity they total <strong>&pound;418K</strong>, you only need a portion to clear &pound;300K. Own your pipeline, keep 100% of the revenue, build something that compounds.</p>
+      <div style="margin-top:30px;display:flex;flex-direction:column;gap:13px;">
+        <div style="border:2px solid #241f1a;background:#efe9da;box-shadow:5px 5px 0 #5e2d2d;padding:17px 22px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;"><span style="font:700 16px 'Hanken Grotesk',sans-serif;">1-on-1 premium training</span><span data-count="288000" data-prefix="&pound;" data-thousands style="font:700 22px 'Space Mono',monospace;color:#0c8f66;">&pound;0</span></div>
+          <div style="font:12px 'Space Mono',monospace;color:#8a7e64;margin-top:4px;">10 clients &times; 3 sessions/wk &times; &pound;200 &times; 48 weeks</div>
+          <div style="margin-top:11px;height:12px;border:1.5px solid #241f1a;background:#e2dac6;padding:2px;"><div data-bar="0.69" style="width:0%;height:100%;background-image:repeating-linear-gradient(90deg,#0c8f66 0 6px,#e2dac6 6px 7px);"></div></div>
+        </div>
+        <div style="border:2px solid #241f1a;background:#efe9da;box-shadow:5px 5px 0 #5e2d2d;padding:17px 22px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;"><span style="font:700 16px 'Hanken Grotesk',sans-serif;">Online coaching</span><span data-count="60000" data-prefix="&pound;" data-thousands style="font:700 22px 'Space Mono',monospace;color:#0c8f66;">&pound;0</span></div>
+          <div style="font:12px 'Space Mono',monospace;color:#8a7e64;margin-top:4px;">20 online clients &times; &pound;250/month &times; 12 months</div>
+          <div style="margin-top:11px;height:12px;border:1.5px solid #241f1a;background:#e2dac6;padding:2px;"><div data-bar="0.144" style="width:0%;height:100%;background-image:repeating-linear-gradient(90deg,#0c8f66 0 6px,#e2dac6 6px 7px);"></div></div>
+        </div>
+        <div style="border:2px solid #241f1a;background:#efe9da;box-shadow:5px 5px 0 #5e2d2d;padding:17px 22px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;"><span style="font:700 16px 'Hanken Grotesk',sans-serif;">Small group sessions</span><span data-count="46080" data-prefix="&pound;" data-thousands style="font:700 22px 'Space Mono',monospace;color:#0c8f66;">&pound;0</span></div>
+          <div style="font:12px 'Space Mono',monospace;color:#8a7e64;margin-top:4px;">4 people &times; &pound;80 &times; 3 sessions/wk &times; 48 weeks</div>
+          <div style="margin-top:11px;height:12px;border:1.5px solid #241f1a;background:#e2dac6;padding:2px;"><div data-bar="0.11" style="width:0%;height:100%;background-image:repeating-linear-gradient(90deg,#0c8f66 0 6px,#e2dac6 6px 7px);"></div></div>
+        </div>
+        <div style="border:2px solid #241f1a;background:#efe9da;box-shadow:5px 5px 0 #5e2d2d;padding:17px 22px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;"><span style="font:700 16px 'Hanken Grotesk',sans-serif;">Nutrition &amp; programme plans</span><span data-count="24000" data-prefix="&pound;" data-thousands style="font:700 22px 'Space Mono',monospace;color:#0c8f66;">&pound;0</span></div>
+          <div style="font:12px 'Space Mono',monospace;color:#8a7e64;margin-top:4px;">5 plans/month &times; &pound;400, custom 12-week programmes</div>
+          <div style="margin-top:11px;height:12px;border:1.5px solid #241f1a;background:#e2dac6;padding:2px;"><div data-bar="0.057" style="width:0%;height:100%;background-image:repeating-linear-gradient(90deg,#0c8f66 0 6px,#e2dac6 6px 7px);"></div></div>
+        </div>
+      </div>
+      <div style="margin-top:18px;display:flex;align-items:center;justify-content:space-between;border:2px solid #241f1a;background:#241f1a;padding:15px 22px;">
+        <span style="font:700 12px 'Space Mono',monospace;letter-spacing:2px;color:#cbb896;">FULL CAPACITY</span>
+        <span style="display:flex;align-items:baseline;gap:14px;"><span data-count="418" data-prefix="&pound;" data-suffix="K" style="font:700 30px 'Space Mono',monospace;color:#E5B567;">&pound;0K</span><span style="font:11px 'Space Mono',monospace;color:#9a8e74;">&pound;300K TARGET</span></span>
+      </div>
+    </section>
+
+    <!-- ============ 2 · THE ARC ============ -->
+    <section class="sec" id="sec2" style="padding:34px 0 24px;display:none;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid #241f1a;padding-bottom:12px;">
+        <span style="font:700 12px 'Space Mono',monospace;letter-spacing:2.5px;color:#c0512a;">02 &middot; THE ARC</span>
+        <span style="font:700 12px 'Space Mono',monospace;letter-spacing:2px;color:#9a8e74;">MONTH BY MONTH</span>
+      </div>
+      <h2 style="margin:24px 0 0;font-family:'Libre Caslon Display',Georgia,serif;font-weight:400;font-size:46px;line-height:1.04;letter-spacing:-1.4px;">The path to &pound;300K.</h2>
+      <p style="max-width:600px;margin:16px 0 0;font-size:18px;line-height:1.55;color:#4a4038;">Conservative assumptions. A clear trajectory from zero to a &pound;300K run rate.</p>
+      <div style="margin-top:28px;display:flex;flex-direction:column;gap:16px;">
+        <div style="border:2px solid #241f1a;background:#efe9da;box-shadow:6px 6px 0 #5e2d2d;">
+          <div style="display:flex;align-items:center;justify-content:space-between;background:#5e2d2d;padding:11px 20px;"><span style="font:700 12px 'Space Mono',monospace;letter-spacing:1.5px;color:#e9e3d3;">PHASE 1, LAUNCH &middot; FINDING YOUR FEET</span><span style="font:700 11px 'Space Mono',monospace;color:#cbb896;">MONTHS 1 to 3</span></div>
+          <div style="padding:18px 20px;display:flex;gap:26px;align-items:center;flex-wrap:wrap;">
+            <div><div style="font:700 24px 'Space Mono',monospace;">4 to 6</div><div style="font:10px 'Space Mono',monospace;color:#8a7e64;letter-spacing:1px;">1-ON-1</div></div>
+            <div><div style="font:700 24px 'Space Mono',monospace;">&pound;8 to 12K</div><div style="font:10px 'Space Mono',monospace;color:#8a7e64;letter-spacing:1px;">MONTHLY</div></div>
+            <div><div data-count="30" data-prefix="&pound;" data-suffix="K" style="font:700 24px 'Space Mono',monospace;color:#0c8f66;">&pound;0K</div><div style="font:10px 'Space Mono',monospace;color:#8a7e64;letter-spacing:1px;">3-MO TOTAL</div></div>
+            <div style="flex:1;min-width:180px;"><div style="font:11px 'Space Mono',monospace;color:#8a7e64;margin-bottom:6px;">&pound;0 to &pound;300K RUN RATE</div><div style="height:14px;border:1.5px solid #241f1a;background:#e2dac6;padding:2px;"><div data-bar="0.33" style="width:0%;height:100%;background-image:repeating-linear-gradient(90deg,#0c8f66 0 6px,#e2dac6 6px 7px);"></div></div></div>
+          </div>
+          <div style="padding:0 20px 16px;font-size:14px;line-height:1.6;color:#4a4038;">Website live and converting &middot; Google Business ranking &middot; first partner referrals &middot; Instagram to 500 &middot; all systems automated.</div>
+        </div>
+        <div style="border:2px solid #241f1a;background:#efe9da;box-shadow:6px 6px 0 #5e2d2d;">
+          <div style="display:flex;align-items:center;justify-content:space-between;background:#5e2d2d;padding:11px 20px;"><span style="font:700 12px 'Space Mono',monospace;letter-spacing:1.5px;color:#e9e3d3;">PHASE 2, GROWTH &middot; BUILDING MOMENTUM</span><span style="font:700 11px 'Space Mono',monospace;color:#cbb896;">MONTHS 4 to 6</span></div>
+          <div style="padding:18px 20px;display:flex;gap:26px;align-items:center;flex-wrap:wrap;">
+            <div><div style="font:700 24px 'Space Mono',monospace;">8 to 10</div><div style="font:10px 'Space Mono',monospace;color:#8a7e64;letter-spacing:1px;">1-ON-1</div></div>
+            <div><div style="font:700 24px 'Space Mono',monospace;">&pound;18 to 22K</div><div style="font:10px 'Space Mono',monospace;color:#8a7e64;letter-spacing:1px;">MONTHLY</div></div>
+            <div><div data-count="90" data-prefix="&pound;" data-suffix="K" style="font:700 24px 'Space Mono',monospace;color:#0c8f66;">&pound;0K</div><div style="font:10px 'Space Mono',monospace;color:#8a7e64;letter-spacing:1px;">6-MO TOTAL</div></div>
+            <div style="flex:1;min-width:180px;"><div style="font:11px 'Space Mono',monospace;color:#8a7e64;margin-bottom:6px;">&pound;0 to &pound;300K RUN RATE</div><div style="height:14px;border:1.5px solid #241f1a;background:#e2dac6;padding:2px;"><div data-bar="0.66" style="width:0%;height:100%;background-image:repeating-linear-gradient(90deg,#0c8f66 0 6px,#e2dac6 6px 7px);"></div></div></div>
+          </div>
+          <div style="padding:0 20px 16px;font-size:14px;line-height:1.6;color:#4a4038;">First group cohort &middot; nutrition plans selling &middot; referral network warm &middot; Instagram 2K+ &middot; first digital products live.</div>
+        </div>
+        <div style="border:2px solid #241f1a;background:#efe9da;box-shadow:6px 6px 0 #c79a3e;">
+          <div style="display:flex;align-items:center;justify-content:space-between;background:#0c8f66;padding:11px 20px;"><span style="font:700 12px 'Space Mono',monospace;letter-spacing:1.5px;color:#f0ead9;">PHASE 3, SCALE &middot; HITTING THE NUMBER</span><span style="font:700 11px 'Space Mono',monospace;color:#d6f0e2;">MONTHS 7 to 12</span></div>
+          <div style="padding:18px 20px;display:flex;gap:26px;align-items:center;flex-wrap:wrap;">
+            <div><div style="font:700 24px 'Space Mono',monospace;">10</div><div style="font:10px 'Space Mono',monospace;color:#8a7e64;letter-spacing:1px;">1-ON-1</div></div>
+            <div><div style="font:700 24px 'Space Mono',monospace;">&pound;25K+</div><div style="font:10px 'Space Mono',monospace;color:#8a7e64;letter-spacing:1px;">MONTHLY</div></div>
+            <div><div data-count="300" data-prefix="&pound;" data-suffix="K" style="font:700 24px 'Space Mono',monospace;color:#0c8f66;">&pound;0K</div><div style="font:10px 'Space Mono',monospace;color:#8a7e64;letter-spacing:1px;">RUN RATE</div></div>
+            <div style="flex:1;min-width:180px;"><div style="font:11px 'Space Mono',monospace;color:#0c8f66;margin-bottom:6px;">&pound;0 to &pound;300K RUN RATE &#10003;</div><div style="height:14px;border:1.5px solid #241f1a;background:#e2dac6;padding:2px;"><div data-bar="1" style="width:0%;height:100%;background-image:repeating-linear-gradient(90deg,#0c8f66 0 6px,#e2dac6 6px 7px);"></div></div></div>
+          </div>
+          <div style="padding:0 20px 16px;font-size:14px;line-height:1.6;color:#4a4038;">Fully booked roster &middot; waitlist for new clients &middot; passive income from digital products &middot; option to hire an associate &middot; brand established.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3 · THE SPRINT ============ -->
+    <section class="sec" id="sec3" style="padding:34px 0 24px;display:none;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid #241f1a;padding-bottom:12px;">
+        <span style="font:700 12px 'Space Mono',monospace;letter-spacing:2.5px;color:#c0512a;">03 &middot; THE 14-DAY SPRINT</span>
+        <span style="font:700 12px 'Space Mono',monospace;letter-spacing:2px;color:#9a8e74;">YOU SHOW UP &middot; IT BUILDS</span>
+      </div>
+      <h2 style="margin:24px 0 0;font-family:'Libre Caslon Display',Georgia,serif;font-weight:400;font-size:46px;line-height:1.04;letter-spacing:-1.4px;">14 days to a running business.</h2>
+      <div style="margin-top:22px;display:flex;border:2px solid #241f1a;box-shadow:5px 5px 0 #5e2d2d;overflow:hidden;">
+        <div style="background:#efe9da;padding:15px 22px;border-right:2px solid #241f1a;text-align:center;"><div data-count="20" data-suffix="%" style="font:700 28px 'Space Mono',monospace;color:#c0512a;">0%</div><div style="font:10px 'Space Mono',monospace;letter-spacing:1.5px;color:#8a7e64;">YOUR EFFORT</div></div>
+        <div style="flex:1;background:#0c8f66;padding:15px 22px;display:flex;align-items:center;justify-content:space-between;"><div><div data-count="80" data-suffix="%" style="font:700 28px 'Space Mono',monospace;color:#f0ead9;">0%</div><div style="font:10px 'Space Mono',monospace;letter-spacing:1.5px;color:#d6f0e2;">THE AGENT HANDLES</div></div><div style="font:13px 'Hanken Grotesk',sans-serif;color:#eafff6;max-width:360px;text-align:right;">Your job for 14 days: train clients, record a clip or two, hit approve. That is it.</div></div>
+      </div>
+      <div style="margin-top:22px;border:2px solid #241f1a;background:#efe9da;box-shadow:6px 6px 0 #5e2d2d;">
+        <div style="background:#241f1a;padding:10px 20px;font:700 11px 'Space Mono',monospace;letter-spacing:2px;color:#E5B567;">WEEK ONE, FOUNDATION</div>
+        <div style="padding:2px 20px 12px;">
+          <div style="display:grid;grid-template-columns:50px 1fr 1.25fr;padding:11px 0;border-bottom:1px solid rgba(36,31,26,.2);font:700 10px 'Space Mono',monospace;letter-spacing:1.5px;color:#8a7e64;"><span>DAY</span><span>WHAT YOU DO</span><span>WHAT THE AGENT DOES</span></div>
+          <div style="display:grid;grid-template-columns:50px 1fr 1.25fr;border-bottom:1px solid rgba(36,31,26,.12);"><div style="padding:11px 0;font:700 12px 'Space Mono',monospace;color:#0c8f66;">D1</div><div style="padding:11px 14px 11px 0;font-size:14px;line-height:1.4;border-right:1px solid rgba(36,31,26,.12);">10-minute brand brief.</div><div style="padding:11px 0 11px 14px;font-size:14px;line-height:1.4;color:#2f6b58;">Builds full brand identity: names, logo, palette, type. Same day.</div></div>
+          <div style="display:grid;grid-template-columns:50px 1fr 1.25fr;border-bottom:1px solid rgba(36,31,26,.12);"><div style="padding:11px 0;font:700 12px 'Space Mono',monospace;color:#0c8f66;">D2</div><div style="padding:11px 14px 11px 0;font-size:14px;line-height:1.4;border-right:1px solid rgba(36,31,26,.12);">Approve brand. Record a 60-sec intro.</div><div style="padding:11px 0 11px 14px;font-size:14px;line-height:1.4;color:#2f6b58;">Registers domain, sets up email, ships website v1.</div></div>
+          <div style="display:grid;grid-template-columns:50px 1fr 1.25fr;border-bottom:1px solid rgba(36,31,26,.12);"><div style="padding:11px 0;font:700 12px 'Space Mono',monospace;color:#0c8f66;">D3</div><div style="padding:11px 14px 11px 0;font-size:14px;line-height:1.4;border-right:1px solid rgba(36,31,26,.12);">Review the site draft (20 min).</div><div style="padding:11px 0 11px 14px;font-size:14px;line-height:1.4;color:#2f6b58;">Deploys site live, Google Business, copy in your voice.</div></div>
+          <div style="display:grid;grid-template-columns:50px 1fr 1.25fr;border-bottom:1px solid rgba(36,31,26,.12);"><div style="padding:11px 0;font:700 12px 'Space Mono',monospace;color:#0c8f66;">D4</div><div style="padding:11px 14px 11px 0;font-size:14px;line-height:1.4;border-right:1px solid rgba(36,31,26,.12);">Record 2 short workout clips.</div><div style="padding:11px 0 11px 14px;font-size:14px;line-height:1.4;color:#2f6b58;">Instagram set up, 30-day calendar, 15 captions ready.</div></div>
+          <div style="display:grid;grid-template-columns:50px 1fr 1.25fr;border-bottom:1px solid rgba(36,31,26,.12);"><div style="padding:11px 0;font:700 12px 'Space Mono',monospace;color:#0c8f66;">D5</div><div style="padding:11px 14px 11px 0;font-size:14px;line-height:1.4;border-right:1px solid rgba(36,31,26,.12);">Pick a booking system (5 min).</div><div style="padding:11px 0 11px 14px;font-size:14px;line-height:1.4;color:#2f6b58;">Compares 3 platforms, configures services and pricing.</div></div>
+          <div style="display:grid;grid-template-columns:50px 1fr 1.25fr;border-bottom:1px solid rgba(36,31,26,.12);"><div style="padding:11px 0;font:700 12px 'Space Mono',monospace;color:#0c8f66;">D6</div><div style="padding:11px 14px 11px 0;font-size:14px;line-height:1.4;border-right:1px solid rgba(36,31,26,.12);">Post first content. Reply 10 min.</div><div style="padding:11px 0 11px 14px;font-size:14px;line-height:1.4;color:#2f6b58;">Schedules the week, onboarding PDF + email template.</div></div>
+          <div style="display:grid;grid-template-columns:50px 1fr 1.25fr;"><div style="padding:11px 0;font:700 12px 'Space Mono',monospace;color:#0c8f66;">D7</div><div style="padding:11px 14px 11px 0;font-size:14px;line-height:1.4;border-right:1px solid rgba(36,31,26,.12);">Rest. Review and approve.</div><div style="padding:11px 0 11px 14px;font-size:14px;line-height:1.4;color:#2f6b58;">Competitor analysis, 10 partner leads, outreach drafts.</div></div>
+        </div>
+      </div>
+      <div style="margin-top:16px;border:2px solid #241f1a;background:#efe9da;box-shadow:6px 6px 0 #5e2d2d;">
+        <div style="background:#241f1a;padding:10px 20px;font:700 11px 'Space Mono',monospace;letter-spacing:2px;color:#E5B567;">WEEK TWO, LAUNCH</div>
+        <div style="padding:2px 20px 12px;">
+          <div style="display:grid;grid-template-columns:50px 1fr 1.25fr;padding:11px 0;border-bottom:1px solid rgba(36,31,26,.2);font:700 10px 'Space Mono',monospace;letter-spacing:1.5px;color:#8a7e64;"><span>DAY</span><span>WHAT YOU DO</span><span>WHAT THE AGENT DOES</span></div>
+          <div style="display:grid;grid-template-columns:50px 1fr 1.25fr;border-bottom:1px solid rgba(36,31,26,.12);"><div style="padding:11px 0;font:700 12px 'Space Mono',monospace;color:#0c8f66;">D8</div><div style="padding:11px 14px 11px 0;font-size:14px;line-height:1.4;border-right:1px solid rgba(36,31,26,.12);">Record a 'why independent' video.</div><div style="padding:11px 0 11px 14px;font-size:14px;line-height:1.4;color:#2f6b58;">SEO blog #1, optimises pages, submits sitemap.</div></div>
+          <div style="display:grid;grid-template-columns:50px 1fr 1.25fr;border-bottom:1px solid rgba(36,31,26,.12);"><div style="padding:11px 0;font:700 12px 'Space Mono',monospace;color:#0c8f66;">D9</div><div style="padding:11px 14px 11px 0;font-size:14px;line-height:1.4;border-right:1px solid rgba(36,31,26,.12);">Send 3 outreach emails (10 min).</div><div style="padding:11px 0 11px 14px;font-size:14px;line-height:1.4;color:#2f6b58;">Contract template, waiver, insurance quotes, invoicing.</div></div>
+          <div style="display:grid;grid-template-columns:50px 1fr 1.25fr;border-bottom:1px solid rgba(36,31,26,.12);"><div style="padding:11px 0;font:700 12px 'Space Mono',monospace;color:#0c8f66;">D10</div><div style="padding:11px 14px 11px 0;font-size:14px;line-height:1.4;border-right:1px solid rgba(36,31,26,.12);">Two free 30-min consults.</div><div style="padding:11px 0 11px 14px;font-size:14px;line-height:1.4;color:#2f6b58;">Lead form, post-consult email sequence, FAQ page.</div></div>
+          <div style="display:grid;grid-template-columns:50px 1fr 1.25fr;border-bottom:1px solid rgba(36,31,26,.12);"><div style="padding:11px 0;font:700 12px 'Space Mono',monospace;color:#0c8f66;">D11</div><div style="padding:11px 14px 11px 0;font-size:14px;line-height:1.4;border-right:1px solid rgba(36,31,26,.12);">Film day-in-the-life clips.</div><div style="padding:11px 0 11px 14px;font-size:14px;line-height:1.4;color:#2f6b58;">Week 2 content: 8 posts, 3 articles, a newsletter.</div></div>
+          <div style="display:grid;grid-template-columns:50px 1fr 1.25fr;border-bottom:1px solid rgba(36,31,26,.12);"><div style="padding:11px 0;font:700 12px 'Space Mono',monospace;color:#0c8f66;">D12</div><div style="padding:11px 14px 11px 0;font-size:14px;line-height:1.4;border-right:1px solid rgba(36,31,26,.12);">Approve the first contract.</div><div style="padding:11px 0 11px 14px;font-size:14px;line-height:1.4;color:#2f6b58;">Full onboarding system: welcome pack, automations.</div></div>
+          <div style="display:grid;grid-template-columns:50px 1fr 1.25fr;border-bottom:1px solid rgba(36,31,26,.12);"><div style="padding:11px 0;font:700 12px 'Space Mono',monospace;color:#0c8f66;">D13</div><div style="padding:11px 14px 11px 0;font-size:14px;line-height:1.4;border-right:1px solid rgba(36,31,26,.12);">Post the transformation video.</div><div style="padding:11px 0 11px 14px;font-size:14px;line-height:1.4;color:#2f6b58;">Expense tracking, tax checklist, accountant research.</div></div>
+          <div style="display:grid;grid-template-columns:50px 1fr 1.25fr;"><div style="padding:11px 0;font:700 12px 'Space Mono',monospace;color:#0c8f66;">D14</div><div style="padding:11px 14px 11px 0;font-size:14px;line-height:1.4;border-right:1px solid rgba(36,31,26,.12);">Onboard your first client.</div><div style="padding:11px 0 11px 14px;font-size:14px;line-height:1.4;color:#2f6b58;">Operational handoff, everything live. Day 1.</div></div>
+        </div>
+      </div>
+      <div style="margin-top:16px;border:2px solid #0a7355;background:#dff0e6;padding:15px 22px;font-size:15px;line-height:1.5;color:#1d5e47;"><strong>By Day 14:</strong> a running business. Website live, booking active, social presence established, first client signed, and you spent maybe 3 hours on operational work.</div>
+    </section>
+
+    <!-- ============ 4 · THE PLAYBOOK ============ -->
+    <section class="sec" id="sec4" style="padding:34px 0 24px;display:none;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid #241f1a;padding-bottom:12px;">
+        <span style="font:700 12px 'Space Mono',monospace;letter-spacing:2.5px;color:#c0512a;">04 &middot; THE PLAYBOOK</span>
+        <span style="font:700 12px 'Space Mono',monospace;letter-spacing:2px;color:#9a8e74;">8 CATEGORIES</span>
+      </div>
+      <h2 style="margin:24px 0 0;font-family:'Libre Caslon Display',Georgia,serif;font-weight:400;font-size:46px;line-height:1.04;letter-spacing:-1.4px;">Everything you hate doing.</h2>
+      <p style="max-width:600px;margin:16px 0 0;font-size:18px;line-height:1.55;color:#4a4038;">What it costs without the agent, and what it looks like with it.</p>
+      <div style="margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div style="border:2px solid #241f1a;background:#efe9da;box-shadow:5px 5px 0 #5e2d2d;padding:17px 18px;"><div style="font:700 12px 'Space Mono',monospace;letter-spacing:2px;color:#0c8f66;">WEBSITE</div><div style="margin-top:9px;font-size:13px;line-height:1.45;color:#8a7e64;"><span style="color:#c0512a;font-weight:700;">WITHOUT</span> &pound;2 to 5K + 6 weeks for a freelancer.</div><div style="margin-top:7px;font-size:13px;line-height:1.45;"><span style="color:#0c8f66;font-weight:700;">AGENT</span> Day 2, live, copy in your voice. Updates free.</div></div>
+        <div style="border:2px solid #241f1a;background:#efe9da;box-shadow:5px 5px 0 #5e2d2d;padding:17px 18px;"><div style="font:700 12px 'Space Mono',monospace;letter-spacing:2px;color:#0c8f66;">SOCIAL MEDIA</div><div style="margin-top:9px;font-size:13px;line-height:1.45;color:#8a7e64;"><span style="color:#c0512a;font-weight:700;">WITHOUT</span> 3 to 5 hrs/week. Most go silent by week 3.</div><div style="margin-top:7px;font-size:13px;line-height:1.45;"><span style="color:#0c8f66;font-weight:700;">AGENT</span> 30-day calendar written ahead. You record raw clips.</div></div>
+        <div style="border:2px solid #241f1a;background:#efe9da;box-shadow:5px 5px 0 #5e2d2d;padding:17px 18px;"><div style="font:700 12px 'Space Mono',monospace;letter-spacing:2px;color:#0c8f66;">CLIENT MANAGEMENT</div><div style="margin-top:9px;font-size:13px;line-height:1.45;color:#8a7e64;"><span style="color:#c0512a;font-weight:700;">WITHOUT</span> Manual scheduling, no-shows, forgotten follow-ups.</div><div style="margin-top:7px;font-size:13px;line-height:1.45;"><span style="color:#0c8f66;font-weight:700;">AGENT</span> Automated booking, reminders, onboarding on autopilot.</div></div>
+        <div style="border:2px solid #241f1a;background:#efe9da;box-shadow:5px 5px 0 #5e2d2d;padding:17px 18px;"><div style="font:700 12px 'Space Mono',monospace;letter-spacing:2px;color:#0c8f66;">FINANCE &amp; ADMIN</div><div style="margin-top:9px;font-size:13px;line-height:1.45;color:#8a7e64;"><span style="color:#c0512a;font-weight:700;">WITHOUT</span> &pound;800 to 1,500/yr accountant, January tax panic.</div><div style="margin-top:7px;font-size:13px;line-height:1.45;"><span style="color:#0c8f66;font-weight:700;">AGENT</span> Invoices auto-generated, expenses tracked, tax organised.</div></div>
+        <div style="border:2px solid #241f1a;background:#efe9da;box-shadow:5px 5px 0 #5e2d2d;padding:17px 18px;"><div style="font:700 12px 'Space Mono',monospace;letter-spacing:2px;color:#0c8f66;">MARKET RESEARCH</div><div style="margin-top:9px;font-size:13px;line-height:1.45;color:#8a7e64;"><span style="color:#c0512a;font-weight:700;">WITHOUT</span> Hours guessing prices. Likely to underprice.</div><div style="margin-top:7px;font-size:13px;line-height:1.45;"><span style="color:#0c8f66;font-weight:700;">AGENT</span> Full competitor landscape and pricing benchmarks in hours.</div></div>
+        <div style="border:2px solid #241f1a;background:#efe9da;box-shadow:5px 5px 0 #5e2d2d;padding:17px 18px;"><div style="font:700 12px 'Space Mono',monospace;letter-spacing:2px;color:#0c8f66;">CONTENT &amp; COPY</div><div style="margin-top:9px;font-size:13px;line-height:1.45;color:#8a7e64;"><span style="color:#c0512a;font-weight:700;">WITHOUT</span> Blank page every time. Hours each.</div><div style="margin-top:7px;font-size:13px;line-height:1.45;"><span style="color:#0c8f66;font-weight:700;">AGENT</span> Blogs, newsletters, PDFs on demand. Polished in minutes.</div></div>
+        <div style="border:2px solid #241f1a;background:#efe9da;box-shadow:5px 5px 0 #5e2d2d;padding:17px 18px;"><div style="font:700 12px 'Space Mono',monospace;letter-spacing:2px;color:#0c8f66;">LEGAL &amp; ADMIN</div><div style="margin-top:9px;font-size:13px;line-height:1.45;color:#8a7e64;"><span style="color:#c0512a;font-weight:700;">WITHOUT</span> &pound;300 to 800 for basic contracts. Most skip it.</div><div style="margin-top:7px;font-size:13px;line-height:1.45;"><span style="color:#0c8f66;font-weight:700;">AGENT</span> Contracts, waivers, insurance compared, ready by Day 9.</div></div>
+        <div style="border:2px solid #241f1a;background:#efe9da;box-shadow:5px 5px 0 #5e2d2d;padding:17px 18px;"><div style="font:700 12px 'Space Mono',monospace;letter-spacing:2px;color:#0c8f66;">GROWTH &amp; SEO</div><div style="margin-top:9px;font-size:13px;line-height:1.45;color:#8a7e64;"><span style="color:#c0512a;font-weight:700;">WITHOUT</span> &pound;500 to 2K/month agency, or hoping word of mouth works.</div><div style="margin-top:7px;font-size:13px;line-height:1.45;"><span style="color:#0c8f66;font-weight:700;">AGENT</span> Google optimised, review strategy, inbound while you sleep.</div></div>
+      </div>
+    </section>
+
+    <!-- ============ 5 · NEXT STEPS ============ -->
+    <section class="sec" id="sec5" style="padding:34px 0 24px;display:none;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid #241f1a;padding-bottom:12px;">
+        <span style="font:700 12px 'Space Mono',monospace;letter-spacing:2.5px;color:#c0512a;">05 &middot; NEXT STEPS</span>
+        <span style="font:700 12px 'Space Mono',monospace;letter-spacing:2px;color:#9a8e74;">THREE THINGS</span>
+      </div>
+      <h2 style="margin:24px 0 0;font-family:'Libre Caslon Display',Georgia,serif;font-weight:400;font-size:46px;line-height:1.04;letter-spacing:-1.4px;">Three things. That's all.</h2>
+      <p style="max-width:600px;margin:16px 0 0;font-size:18px;line-height:1.55;color:#4a4038;">The whole point is that the agent does the work. Here is what you actually do.</p>
+      <div style="margin-top:28px;display:flex;flex-direction:column;gap:14px;">
+        <div style="display:flex;gap:20px;align-items:flex-start;border:2px solid #241f1a;background:#efe9da;box-shadow:5px 5px 0 #5e2d2d;padding:20px 22px;">
+          <span style="font:700 26px 'Space Mono',monospace;color:#0c8f66;line-height:1;">01</span>
+          <div style="flex:1;"><div style="display:flex;justify-content:space-between;align-items:baseline;"><span style="font:700 18px 'Hanken Grotesk',sans-serif;">Say yes to the plan</span><span style="font:700 11px 'Space Mono',monospace;color:#c0512a;letter-spacing:1px;">5 MINUTES</span></div><div style="margin-top:6px;font-size:14px;line-height:1.5;color:#4a4038;">One conversation starts the whole machine. No contracts, no software, no hours upfront. Day 1 begins immediately.</div></div>
+        </div>
+        <div style="display:flex;gap:20px;align-items:flex-start;border:2px solid #241f1a;background:#efe9da;box-shadow:5px 5px 0 #5e2d2d;padding:20px 22px;">
+          <span style="font:700 26px 'Space Mono',monospace;color:#0c8f66;line-height:1;">02</span>
+          <div style="flex:1;"><div style="display:flex;justify-content:space-between;align-items:baseline;"><span style="font:700 18px 'Hanken Grotesk',sans-serif;">Fill out the brand brief</span><span style="font:700 11px 'Space Mono',monospace;color:#c0512a;letter-spacing:1px;">10 MINUTES</span></div><div style="margin-top:6px;font-size:14px;line-height:1.5;color:#4a4038;">10 questions: ideal client, philosophy, tone. Your answers become the foundation for everything.</div></div>
+        </div>
+        <div style="display:flex;gap:20px;align-items:flex-start;border:2px solid #241f1a;background:#efe9da;box-shadow:5px 5px 0 #5e2d2d;padding:20px 22px;">
+          <span style="font:700 26px 'Space Mono',monospace;color:#0c8f66;line-height:1;">03</span>
+          <div style="flex:1;"><div style="display:flex;justify-content:space-between;align-items:baseline;"><span style="font:700 18px 'Hanken Grotesk',sans-serif;">Record a 60-second video</span><span style="font:700 11px 'Space Mono',monospace;color:#c0512a;letter-spacing:1px;">60 SECONDS</span></div><div style="margin-top:6px;font-size:14px;line-height:1.5;color:#4a4038;">On your phone, no script. This one clip becomes your website hero, first post, and intro. The agent handles the rest.</div></div>
+        </div>
+      </div>
+      <div style="margin-top:30px;border:2px solid #241f1a;background:#241f1a;box-shadow:7px 7px 0 #c79a3e;padding:40px;text-align:center;">
+        <div style="font:700 12px 'Space Mono',monospace;letter-spacing:2.5px;color:#E5B567;">THE COMMITMENT</div>
+        <h3 style="margin:14px auto 0;max-width:600px;font-family:'Libre Caslon Display',Georgia,serif;font-weight:400;font-size:38px;line-height:1.08;color:#f0ead9;">The business you want is <span style="color:#19c98a;">14 days away.</span></h3>
+        <p style="max-width:480px;margin:14px auto 0;font-size:15px;line-height:1.55;color:#cbb896;">You focus on being the best in the city. The agent handles everything else, starting Day 1.</p>
+        <button class="claimbtn" style="margin-top:26px;" onclick="claim()">CLAIM MY PLAN &nbsp;&rarr;</button>
+      </div>
+    </section>
+
+    <!-- ============ CTA / PRINT NEXT ============ -->
+    <div id="ctaArea" style="text-align:center;margin-top:44px;"></div>
+  </div>
+
+  <!-- persistent printer-head robot -->
+  <div id="fixedRobot" style="position:fixed;bottom:26px;right:30px;z-index:30;width:80px;animation:mp-bob 1.9s steps(2) infinite alternate;">
+    <div style="position:relative;z-index:4;width:52px;height:8px;margin:0 auto;background:#241f1a;border:2px solid #241f1a;border-radius:3px 3px 0 0;"></div>
+    <div style="width:76px;height:58px;margin:-1px auto 0;background:#5e2d2d;border:2px solid #241f1a;border-radius:4px 4px 11px 11px;box-shadow:4px 4px 0 rgba(36,31,26,.2);padding:7px;position:relative;z-index:3;">
+      <div style="position:relative;width:100%;height:100%;background:#10201c;border:2px solid #241f1a;border-radius:3px;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;">
+        <div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(6,182,212,.16) 0 1px,transparent 1px 3px);animation:mp-scan 1.2s steps(4) infinite;pointer-events:none;"></div>
+        <div style="display:flex;gap:10px;">
+          <div style="width:11px;height:15px;background:#06B6D4;border-radius:50%;box-shadow:0 0 8px rgba(6,182,212,.6);animation:mp-blink 3.4s infinite;"></div>
+          <div style="width:11px;height:15px;background:#06B6D4;border-radius:50%;box-shadow:0 0 8px rgba(6,182,212,.6);animation:mp-blink 3.4s infinite;"></div>
+        </div>
+        <div style="width:15px;height:7px;border:2px solid #06B6D4;border-top:none;border-radius:0 0 20px 20px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let revealed=0, printing=false, pt=null;
+  const ctaLabels=["LET'S GET PRINTING  &rarr;",'PRINT THE ROADMAP  &rarr;','PRINT THE 14-DAY SPRINT  &rarr;','PRINT THE PLAYBOOK  &rarr;','PRINT MY NEXT STEPS  &rarr;'];
+  const ctaHints=['See the number the agent built for you','Month-by-month path to the target','The day-by-day launch sprint','Everything the agent handles for you','The three things you actually do'];
+  const printLabels=['the number','the roadmap','the sprint','the playbook','next steps'];
+  const stepLabels=['COVER','01 / 05','02 / 05','03 / 05','04 / 05','05 / 05'];
+
+  function animate(scope){
+    scope.querySelectorAll('[data-count]:not([data-done])').forEach(el=>{
+      el.setAttribute('data-done','1');
+      const target=+el.getAttribute('data-count'), prefix=el.getAttribute('data-prefix')||'', suffix=el.getAttribute('data-suffix')||'', thousands=el.hasAttribute('data-thousands');
+      const dur=950, start=performance.now();
+      const fmt=v=>{const n=Math.round(v); return prefix+(thousands?n.toLocaleString('en-US'):n)+suffix;};
+      const tick=now=>{ const p=Math.min(1,(now-start)/dur), e=1-Math.pow(1-p,3); el.innerHTML=fmt(e*target); if(p<1) requestAnimationFrame(tick); else el.innerHTML=fmt(target); };
+      requestAnimationFrame(tick);
+    });
+    scope.querySelectorAll('[data-bar]:not([data-bardone])').forEach(el=>{
+      el.setAttribute('data-bardone','1');
+      const target=+el.getAttribute('data-bar')*100;
+      el.style.width='0%';
+      requestAnimationFrame(()=>{ el.style.transition='width .9s steps(14)'; el.style.width=target+'%'; });
+    });
+  }
+
+  function printingStripHTML(){
+    return `<div style="display:inline-block;position:relative;padding-top:58px;">
+      <div style="position:absolute;top:0;left:50%;margin-left:-42px;z-index:2;width:84px;animation:mp-bob 1.5s steps(2) infinite alternate;">
+        <div style="position:absolute;left:50%;margin-left:-16px;top:2px;width:32px;height:8px;">
+          <div style="position:absolute;width:32px;height:18px;background:linear-gradient(#1faa73,#0c8f66);border:1px solid #c79a3e;display:flex;align-items:center;justify-content:center;font:700 8px 'Space Mono',monospace;color:#bfe9d6;animation:mp-print 1.3s steps(7) infinite;">$</div>
+          <div style="position:absolute;width:32px;height:18px;background:linear-gradient(#1faa73,#0c8f66);border:1px solid #c79a3e;display:flex;align-items:center;justify-content:center;font:700 8px 'Space Mono',monospace;color:#bfe9d6;animation:mp-print 1.3s steps(7) infinite;animation-delay:.65s;">$</div>
+        </div>
+        <div style="position:relative;z-index:4;width:54px;height:8px;margin:0 auto;background:#241f1a;border:2px solid #241f1a;border-radius:3px 3px 0 0;"></div>
+        <div style="width:80px;height:58px;margin:-1px auto 0;background:#5e2d2d;border:2px solid #241f1a;border-radius:4px 4px 11px 11px;box-shadow:4px 4px 0 rgba(36,31,26,.2);padding:7px;position:relative;z-index:3;">
+          <div style="position:relative;width:100%;height:100%;background:#10201c;border:2px solid #241f1a;border-radius:3px;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;">
+            <div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(6,182,212,.16) 0 1px,transparent 1px 3px);animation:mp-scan 1.2s steps(4) infinite;pointer-events:none;"></div>
+            <div style="display:flex;gap:11px;"><div style="font:700 14px 'Space Mono',monospace;color:#10B981;text-shadow:0 0 8px rgba(16,185,129,.7);">$</div><div style="font:700 14px 'Space Mono',monospace;color:#10B981;text-shadow:0 0 8px rgba(16,185,129,.7);">$</div></div>
+            <div style="width:15px;height:7px;border:2px solid #06B6D4;border-top:none;border-radius:0 0 20px 20px;"></div>
+          </div>
+        </div>
+      </div>
+      <div style="border:2px solid #241f1a;background:#0c1512;box-shadow:5px 5px 0 #5e2d2d;padding:15px 24px;text-align:left;min-width:380px;">
+        <div style="font:13px 'Space Mono',monospace;color:#19c98a;">&#9679; agent &middot; printing ${printLabels[revealed]}<span style="display:inline-block;width:8px;height:13px;background:#19c98a;margin-left:4px;vertical-align:-2px;animation:mp-blink 1s steps(1) infinite;"></span></div>
+        <div style="margin-top:11px;height:13px;border:1.5px solid #0c8f66;padding:2px;background:#0a120f;"><div style="height:100%;background-image:repeating-linear-gradient(90deg,#0c8f66 0 6px,#0a120f 6px 7px);animation:mp-load 1.25s steps(13) forwards;"></div></div>
+      </div>
+    </div>`;
+  }
+
+  function render(){
+    for(let i=1;i<=5;i++){ document.getElementById('sec'+i).style.display = revealed>=i?'block':'none'; }
+    document.getElementById('stepLabel').textContent = stepLabels[revealed];
+    const cta=document.getElementById('ctaArea');
+    if(revealed>=5){ cta.style.display='none'; cta.innerHTML=''; }
+    else {
+      cta.style.display='block';
+      if(printing){ cta.innerHTML=printingStripHTML(); }
+      else {
+        cta.innerHTML=`<button class="printbtn" id="printNextBtn">${ctaLabels[revealed]}</button>
+          <div style="margin-top:14px;font:11px 'Space Mono',monospace;letter-spacing:1px;color:#9a8e74;">${ctaHints[revealed]}</div>`;
+        document.getElementById('printNextBtn').onclick=printNext;
+      }
+    }
+    document.getElementById('fixedRobot').style.display = printing?'none':'block';
+  }
+
+  function printNext(){
+    if(printing||revealed>=5) return;
+    printing=true; render();
+    clearTimeout(pt);
+    pt=setTimeout(()=>{
+      revealed++; printing=false; render();
+      const el=document.getElementById('sec'+revealed); if(el) animate(el);
+      setTimeout(()=>{ if(el) window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-74,behavior:'smooth'}); },70);
+    },1350);
+  }
+  function claim(){ location.href='moneyprinter-book-call.html'; }
+
+  // boot
+  animate(document.getElementById('cover'));
+  render();
+</script>
+</body>
+</html>
