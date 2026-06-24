@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moneyprinter | Mascot v2 — simplified + WALL-E movement</title>
+<style>
+  :root{
+    --cream:#e9e3d3;--cream-2:#f3eee1;
+    --taupe:#b7a888;
+    --ink:#241f1a;--ink-soft:#5b5142;
+    --rust:#c0512a;--maroon:#5e2d2d;
+    --green:#0c8f66;--green-br:#10B981;--gold:#c79a3e;--teal:#06B6D4;
+    --mono:"SF Mono",ui-monospace,"Roboto Mono",Menlo,Consolas,monospace;
+    --serif:"Georgia","Times New Roman",Times,serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--cream);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;
+    background-image:repeating-linear-gradient(45deg,rgba(120,100,66,.06) 0 1px,transparent 1px 8px),repeating-linear-gradient(-45deg,rgba(120,100,66,.06) 0 1px,transparent 1px 8px);}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 26px}
+  .mono{font-family:var(--mono)}
+  header.top{border-bottom:2px solid var(--ink);padding:34px 0 22px}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--rust);font-weight:700}
+  header.top h1{font-family:var(--serif);font-size:34px;margin:10px 0 8px}
+  header.top p{font-size:15px;color:var(--ink-soft);max-width:740px}
+
+  section{padding:38px 0;border-bottom:1px solid var(--taupe)}
+  section h2{font-family:var(--serif);font-size:22px;display:flex;align-items:center;gap:10px}
+  .tag{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--rust);border:1px solid var(--rust);padding:2px 7px;border-radius:2px}
+  .sub{color:var(--ink-soft);margin:8px 0 22px;font-size:14px;max-width:760px}
+
+  .stage{background:var(--cream-2);border:2px solid var(--ink);box-shadow:7px 7px 0 rgba(36,31,26,.14);display:flex;align-items:center;justify-content:center;padding:36px 20px;position:relative;overflow:hidden}
+  .hero svg{width:170px;height:auto;display:block}
+
+  /* ===== MOVEMENT TRACK ===== */
+  .track{height:230px;padding:0}
+  .floor{position:absolute;left:0;right:0;bottom:54px;border-top:2px dashed var(--taupe)}
+  .stations{position:absolute;left:0;right:0;bottom:58px;display:flex;justify-content:space-around;padding:0 60px;pointer-events:none}
+  .st{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);text-align:center}
+  .st .dot{width:8px;height:8px;border:1.5px solid var(--ink);background:var(--cream);margin:0 auto 6px;transform:rotate(45deg)}
+  .st.lit .dot{background:var(--green-br)}
+  /* the bot */
+  .bot{position:absolute;bottom:50px;left:24px;width:120px;transform:translateX(0);transition:transform 2s linear}
+  .bot.bob{animation:bob .5s steps(2,end) infinite}
+  @keyframes bob{0%,100%{margin-bottom:0}50%{margin-bottom:4px}}
+  .bot svg{width:120px;height:auto;display:block;overflow:visible}
+  .head{transform-box:fill-box;transform-origin:50% 100%;transition:transform .35s steps(3,end)}
+  .bot.tl .head{transform:rotate(-9deg)} .bot.tr .head{transform:rotate(9deg)}
+  .iris{transition:transform .3s steps(2,end)}
+  .bot.up .iris{transform:translateY(-3px)} .bot.rt .iris{transform:translateX(3px)} .bot.lf .iris{transform:translateX(-3px)}
+  /* face states */
+  .m-happy,.eye-greedy{display:none}
+  .bot.happy .m-idle{display:none} .bot.happy .m-happy{display:block}
+  .bot.greedy .eye-norm{display:none} .bot.greedy .eye-greedy{display:block}
+  /* tread roll */
+  .tread{transition:opacity .2s}
+  .bot.moving .treadmark{animation:roll .4s linear infinite}
+  @keyframes roll{from{transform:translateX(0)}to{transform:translateX(-12px)}}
+  /* printed bill drop */
+  .dropbill{opacity:0}
+  .dropbill.go{animation:drop .5s steps(3,end) forwards}
+  @keyframes drop{0%{opacity:1;transform:translateY(0)}100%{opacity:1;transform:translateY(34px)}}
+
+  .ctrlnote{font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:14px;text-align:center}
+
+  .faces{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .face{background:var(--cream-2);border:2px solid var(--ink);box-shadow:4px 4px 0 rgba(36,31,26,.12);padding:18px 10px;text-align:center}
+  .face svg{width:88px;height:auto}
+  .face .lab{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin-top:10px}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .card{background:var(--cream-2);border:1.5px solid var(--ink);padding:18px 20px;box-shadow:4px 4px 0 rgba(36,31,26,.1)}
+  .card h3{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--rust);margin-bottom:10px}
+  .card li{list-style:none;font-size:13.5px;padding:6px 0 6px 16px;position:relative;border-top:1px solid #241f1a14}
+  .card li:first-child{border-top:none}
+  .card li::before{content:"";position:absolute;left:2px;top:12px;width:6px;height:6px;background:var(--green-br)}
+  .card.x li::before{background:var(--rust)}
+  .card li b{color:var(--ink)}
+  footer{padding:26px 0 56px;color:var(--ink-soft);font-size:12px;font-family:var(--mono)}
+  @media(max-width:760px){.faces,.grid2{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <div class="eyebrow">Moneyprinter · Mascot · v2 · 2026-06-23</div>
+  <h1>Simpler. And he moves.</h1>
+  <p>Stripped back to the essentials — screen-face head, boxy body with a chest printer slot, treads. No name, no props. The point of v2 is the <b>movement</b>: WALL-E energy, trundling along and reacting as the user goes through the flow. Refresh to replay.</p>
+</div></header>
+
+<!-- ===== 1. SIMPLIFIED ===== -->
+<section><div class="wrap">
+  <h2>The simplified build</h2>
+  <p class="sub">Dropped: bowtie, rivets, blush, antenna, held bill, belly counter. Kept: round expressive eyes, a chest slot that prints, treads. Cleaner silhouette, reads at any size.</p>
+  <div class="stage"><div class="hero">
+    <svg viewBox="0 0 140 170" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ece6d6"/><stop offset="1" stop-color="#bcaf90"/></linearGradient>
+        <linearGradient id="bill" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#10B981"/><stop offset="1" stop-color="#0c8f66"/></linearGradient>
+      </defs>
+      <ellipse cx="70" cy="160" rx="48" ry="8" fill="#241f1a" opacity="0.13"/>
+      <!-- treads -->
+      <rect x="30" y="132" width="80" height="22" rx="11" fill="url(#steel)" stroke="#241f1a" stroke-width="2.5"/>
+      <g fill="#241f1a"><rect x="40" y="139" width="3" height="8"/><rect x="50" y="139" width="3" height="8"/><rect x="60" y="139" width="3" height="8"/><rect x="70" y="139" width="3" height="8"/><rect x="80" y="139" width="3" height="8"/><rect x="90" y="139" width="3" height="8"/></g>
+      <circle cx="40" cy="143" r="6" fill="#cfc3a4" stroke="#241f1a" stroke-width="2"/><circle cx="100" cy="143" r="6" fill="#cfc3a4" stroke="#241f1a" stroke-width="2"/>
+      <!-- body -->
+      <rect x="42" y="86" width="56" height="48" rx="12" fill="url(#steel)" stroke="#241f1a" stroke-width="2.5"/>
+      <rect x="50" y="92" width="40" height="5" rx="2.5" fill="#10B981"/>
+      <rect x="52" y="112" width="36" height="6" rx="2" fill="#16110d" stroke="#241f1a" stroke-width="1.2"/>
+      <circle cx="92" cy="104" r="2.4" fill="#10B981"/>
+      <!-- neck -->
+      <rect x="62" y="78" width="16" height="10" fill="url(#steel)" stroke="#241f1a" stroke-width="2"/>
+      <!-- head -->
+      <rect x="40" y="36" width="60" height="46" rx="14" fill="url(#steel)" stroke="#241f1a" stroke-width="2.5"/>
+      <rect x="48" y="44" width="44" height="30" rx="8" fill="#0e1a14" stroke="#241f1a" stroke-width="1.6"/>
+      <!-- eyes round -->
+      <circle cx="62" cy="59" r="7" fill="#06B6D4"/><circle cx="78" cy="59" r="7" fill="#06B6D4"/>
+      <circle cx="64" cy="57" r="2.2" fill="#bdf0fb"/><circle cx="80" cy="57" r="2.2" fill="#bdf0fb"/>
+      <!-- mouth -->
+      <path d="M64 69 q6 4 12 0" fill="none" stroke="#10B981" stroke-width="2"/>
+    </svg>
+  </div></div>
+</div></section>
+
+<!-- ===== 2. MOVEMENT (WALL-E) ===== -->
+<section><div class="wrap">
+  <h2>He moves through the flow <span class="tag">WALL-E</span></h2>
+  <p class="sub">Trundles along on treads, bobs as he rolls, tilts his head to look at each step (curious), stops to print, gets greedy at the payoff. Imagine this riding along the bottom of the diagnostic flow, reacting to where the user is.</p>
+  <div class="stage track" id="track">
+    <div class="floor"></div>
+    <div class="stations">
+      <div class="st" id="s1"><div class="dot"></div>your number</div>
+      <div class="st" id="s2"><div class="dot"></div>build</div>
+      <div class="st" id="s3"><div class="dot"></div>print</div>
+    </div>
+
+    <div class="bot" id="bot">
+      <svg viewBox="0 0 140 150" xmlns="http://www.w3.org/2000/svg">
+        <!-- treads -->
+        <rect x="30" y="116" width="80" height="22" rx="11" fill="url(#steel)" stroke="#241f1a" stroke-width="2.5"/>
+        <g class="treadmark" fill="#241f1a"><rect x="40" y="123" width="3" height="8"/><rect x="50" y="123" width="3" height="8"/><rect x="60" y="123" width="3" height="8"/><rect x="70" y="123" width="3" height="8"/><rect x="80" y="123" width="3" height="8"/><rect x="90" y="123" width="3" height="8"/><rect x="100" y="123" width="3" height="8"/></g>
+        <circle cx="40" cy="127" r="6" fill="#cfc3a4" stroke="#241f1a" stroke-width="2"/><circle cx="100" cy="127" r="6" fill="#cfc3a4" stroke="#241f1a" stroke-width="2"/>
+        <!-- body -->
+        <rect x="42" y="70" width="56" height="48" rx="12" fill="url(#steel)" stroke="#241f1a" stroke-width="2.5"/>
+        <rect x="50" y="76" width="40" height="5" rx="2.5" fill="#10B981"/>
+        <rect x="52" y="96" width="36" height="6" rx="2" fill="#16110d" stroke="#241f1a" stroke-width="1.2"/>
+        <circle cx="92" cy="88" r="2.4" fill="#10B981"/>
+        <!-- printed bill that drops -->
+        <g class="dropbill" id="dropbill"><rect x="55" y="100" width="30" height="14" rx="2" fill="url(#bill)" stroke="#E5B567" stroke-width="1.2"/><text x="70" y="110" font-family="Georgia,serif" font-size="9" fill="#08110d" text-anchor="middle" font-weight="bold">$</text></g>
+        <!-- neck -->
+        <rect x="62" y="62" width="16" height="10" fill="url(#steel)" stroke="#241f1a" stroke-width="2"/>
+        <!-- head -->
+        <g class="head">
+          <rect x="40" y="20" width="60" height="46" rx="14" fill="url(#steel)" stroke="#241f1a" stroke-width="2.5"/>
+          <rect x="48" y="28" width="44" height="30" rx="8" fill="#0e1a14" stroke="#241f1a" stroke-width="1.6"/>
+          <!-- normal eyes -->
+          <g class="eye-norm">
+            <circle cx="62" cy="43" r="7" fill="#06B6D4"/><circle cx="78" cy="43" r="7" fill="#06B6D4"/>
+            <g class="iris"><circle cx="62" cy="43" r="2.6" fill="#bdf0fb"/><circle cx="78" cy="43" r="2.6" fill="#bdf0fb"/></g>
+          </g>
+          <!-- greedy eyes -->
+          <g class="eye-greedy"><text x="62" y="48" font-family="Georgia,serif" font-size="15" fill="#E5B567" text-anchor="middle" font-weight="bold">$</text><text x="78" y="48" font-family="Georgia,serif" font-size="15" fill="#E5B567" text-anchor="middle" font-weight="bold">$</text></g>
+          <!-- mouths -->
+          <path class="m-idle" d="M64 53 q6 4 12 0" fill="none" stroke="#10B981" stroke-width="2"/>
+          <ellipse class="m-happy" cx="70" cy="54" rx="6" ry="4" fill="#10B981"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <div class="ctrlnote">↑ he loops: roll · look at "your number" · roll · print · roll · get greedy at "print" · reset</div>
+</div></section>
+
+<!-- ===== 3. EXPRESSIONS ===== -->
+<section><div class="wrap">
+  <h2>Expressions</h2>
+  <p class="sub">Personality lives in the screen. Greedy is the occasional payoff, not the default.</p>
+  <div class="faces">
+    <div class="face">
+      <svg viewBox="0 0 110 80"><rect x="6" y="6" width="98" height="68" rx="14" fill="url(#steel)" stroke="#241f1a" stroke-width="2.5"/><rect x="18" y="18" width="74" height="44" rx="10" fill="#0e1a14"/><circle cx="42" cy="40" r="8" fill="#06B6D4"/><circle cx="68" cy="40" r="8" fill="#06B6D4"/><circle cx="44" cy="37" r="2.4" fill="#bdf0fb"/><circle cx="70" cy="37" r="2.4" fill="#bdf0fb"/><path d="M46 54 q9 5 18 0" fill="none" stroke="#10B981" stroke-width="2.4"/></svg>
+      <div class="lab">Idle</div>
+    </div>
+    <div class="face">
+      <svg viewBox="0 0 110 80"><rect x="6" y="6" width="98" height="68" rx="14" fill="url(#steel)" stroke="#241f1a" stroke-width="2.5"/><rect x="18" y="18" width="74" height="44" rx="10" fill="#0e1a14"/><path d="M34 42 q8 -11 16 0" fill="none" stroke="#06B6D4" stroke-width="4" stroke-linecap="round"/><path d="M60 42 q8 -11 16 0" fill="none" stroke="#06B6D4" stroke-width="4" stroke-linecap="round"/><ellipse cx="55" cy="55" rx="7" ry="5" fill="#10B981"/></svg>
+      <div class="lab">Happy</div>
+    </div>
+    <div class="face">
+      <svg viewBox="0 0 110 80"><rect x="6" y="6" width="98" height="68" rx="14" fill="url(#steel)" stroke="#241f1a" stroke-width="2.5"/><rect x="18" y="18" width="74" height="44" rx="10" fill="#0e1a14"/><text x="42" y="46" font-family="Georgia,serif" font-size="19" fill="#E5B567" text-anchor="middle" font-weight="bold">$</text><text x="68" y="46" font-family="Georgia,serif" font-size="19" fill="#E5B567" text-anchor="middle" font-weight="bold">$</text><path d="M46 56 q9 6 18 0" fill="none" stroke="#10B981" stroke-width="2.4"/></svg>
+      <div class="lab">Greedy</div>
+    </div>
+    <div class="face">
+      <svg viewBox="0 0 110 80"><rect x="6" y="6" width="98" height="68" rx="14" fill="url(#steel)" stroke="#241f1a" stroke-width="2.5"/><rect x="18" y="18" width="74" height="44" rx="10" fill="#0e1a14"/><line x1="34" y1="40" x2="46" y2="40" stroke="#06B6D4" stroke-width="4" stroke-linecap="round"/><line x1="64" y1="40" x2="76" y2="40" stroke="#06B6D4" stroke-width="4" stroke-linecap="round"/><path d="M48 54 h14" stroke="#10B981" stroke-width="2.4"/></svg>
+      <div class="lab">Working</div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ===== 4. USAGE ===== -->
+<section><div class="wrap">
+  <h2>How he shows up</h2>
+  <div class="grid2">
+    <div class="card"><h3>His job</h3>
+      <li><b>Rides the diagnostic flow</b> — moves step to step with the user, reacts to their number.</li>
+      <li><b>The loader</b> — he's printing/working, so no spinner ever.</li>
+      <li><b>Empty + success</b> — rolls in, prints the result.</li>
+      <li><b>No name, no speech bubbles</b> — he emotes through movement + face only.</li>
+    </div>
+    <div class="card x"><h3>Keep him clean</h3>
+      <li>Movement is <b>mechanical</b> (stepped bob, tread roll), not floaty.</li>
+      <li>Greedy face is rare — mostly curious + working.</li>
+      <li>No added props; the silhouette stays simple.</li>
+      <li>Warm palette only; he's a teller-bot, not a toy.</li>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">Moneyprinter mascot v2 · open-claw · 2026-06-23 · simplified, nameless, WALL-E movement. Sketch-grade; redraw tight once locked.</div></footer>
+
+<script>
+(function(){
+  const bot=document.getElementById('bot'), drop=document.getElementById('dropbill');
+  const s1=document.getElementById('s1'),s2=document.getElementById('s2'),s3=document.getElementById('s3');
+  let timers=[];
+  function at(ms,fn){timers.push(setTimeout(fn,ms));}
+  function moveTo(px){bot.style.transform='translateX('+px+'px)';}
+  function cls(add,rm){if(rm)rm.split(' ').forEach(c=>bot.classList.remove(c));if(add)add.split(' ').forEach(c=>c&&bot.classList.add(c));}
+
+  function loop(){
+    timers.forEach(clearTimeout);timers=[];
+    // reset (no transition)
+    bot.style.transition='none';moveTo(0);
+    [s1,s2,s3].forEach(s=>s.classList.remove('lit'));
+    bot.className='bot';drop.classList.remove('go');
+    // start
+    at(60,()=>{bot.style.transition='transform 2s linear';cls('moving bob up');moveTo(170);});
+    // arrive station 1 — look (curious tilt)
+    at(2200,()=>{cls('','moving bob');cls('tl up','');s1.classList.add('lit');});
+    at(3000,()=>{cls('tr','tl');});            // glance other way
+    at(3700,()=>{cls('','tr up');});           // straighten
+    // roll to station 2 — print
+    at(4000,()=>{bot.style.transition='transform 1.8s linear';cls('moving bob','');moveTo(330);});
+    at(5800,()=>{cls('happy','moving bob');s2.classList.add('lit');drop.classList.remove('go');void drop.offsetWidth;drop.classList.add('go');});
+    // roll to station 3 — greedy payoff
+    at(6700,()=>{bot.style.transition='transform 1.8s linear';cls('moving bob','happy');moveTo(500);});
+    at(8500,()=>{cls('greedy','moving bob');s3.classList.add('lit');});
+    at(9600,()=>{cls('','greedy');});
+    // loop
+    at(10600,loop);
+  }
+  loop();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>moneyprinter.ai | Funnel index + brand</title>
+<!-- INTERNAL hub: every funnel path, clickable, + a short brand guideline. Not a public page. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Space+Mono:wght@400;700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}html,body{margin:0;padding:0;}
+  a{text-decoration:none;color:inherit;}
+  body{background-color:#e9e3d3;background-image:repeating-linear-gradient(45deg,rgba(36,31,26,.04) 0 1px,transparent 1px 9px),repeating-linear-gradient(-45deg,rgba(36,31,26,.03) 0 1px,transparent 1px 9px);font-family:'Hanken Grotesk',system-ui,sans-serif;color:#241f1a;line-height:1.55;}
+  .wrap{max-width:880px;margin:0 auto;padding:0 28px;}
+  .kick{font:700 12px 'Space Mono',monospace;letter-spacing:2.5px;color:#c0512a;}
+  h1{font-family:'Libre Caslon Display',Georgia,serif;font-weight:400;letter-spacing:-1.4px;}
+  h2{font-family:'Libre Caslon Display',Georgia,serif;font-weight:400;font-size:30px;letter-spacing:-1px;margin:0 0 4px;}
+  .bar{display:flex;align-items:center;justify-content:center;height:62px;border-bottom:2px solid #241f1a;}
+  .logo{font:800 22px 'Hanken Grotesk',sans-serif;letter-spacing:-.8px;}
+  .logo .p{color:#0c8f66;} .logo .ai{color:#06B6D4;}
+  /* cards */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .card{display:block;border:2px solid #241f1a;background:#efe9da;box-shadow:6px 6px 0 #5e2d2d;padding:22px 24px;transition:.1s;cursor:pointer;}
+  .card:hover{transform:translate(2px,2px);box-shadow:4px 4px 0 #5e2d2d;background:#f3eede;}
+  .tag{display:inline-block;font:700 11px 'Space Mono',monospace;letter-spacing:1px;padding:3px 9px;border:1.5px solid #241f1a;margin-bottom:12px;}
+  .tag.greed{color:#0c8f66;border-color:#0c8f66;} .tag.ai{color:#0a93ad;border-color:#06B6D4;}
+  .card h3{font:700 19px 'Hanken Grotesk',sans-serif;margin:0 0 4px;}
+  .card p{font-size:14px;color:#6a5f4e;margin:0;}
+  .card .go{font:700 12px 'Space Mono',monospace;letter-spacing:1px;color:#c0512a;margin-top:14px;}
+  /* flow */
+  .step{display:flex;align-items:center;gap:18px;border:2px solid #241f1a;background:#efe9da;box-shadow:5px 5px 0 #5e2d2d;padding:16px 20px;transition:.1s;cursor:pointer;}
+  .step:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 #5e2d2d;background:#f3eede;}
+  .num{flex:none;width:42px;height:42px;border:2px solid #241f1a;background:#241f1a;color:#E5B567;display:flex;align-items:center;justify-content:center;font:700 16px 'Space Mono',monospace;}
+  .lab{font:700 11px 'Space Mono',monospace;color:#8a7e64;letter-spacing:1px;}
+  .arrow{text-align:center;font:700 15px 'Space Mono',monospace;color:#9a8e74;margin:5px 0;}
+  /* brand */
+  .sw{display:flex;flex-wrap:wrap;gap:10px;}
+  .chip{border:2px solid #241f1a;box-shadow:3px 3px 0 rgba(36,31,26,.18);width:128px;}
+  .chip .col{height:52px;}
+  .chip .meta{background:#efe9da;border-top:2px solid #241f1a;padding:6px 8px;font:700 10px 'Space Mono',monospace;line-height:1.5;}
+  .chip .meta span{display:block;font-weight:400;color:#6a5f4e;}
+  .panel{border:2px solid #241f1a;background:#efe9da;box-shadow:5px 5px 0 #5e2d2d;padding:18px 20px;}
+  .panel h4{font:700 12px 'Space Mono',monospace;letter-spacing:1px;margin:0 0 10px;color:#c0512a;}
+  .panel li{font-size:14px;color:#3a342b;padding:5px 0;border-top:1px solid rgba(36,31,26,.1);list-style:none;}
+  .panel li:first-child{border-top:none;}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .yes b{color:#0c8f66;} .no b{color:#b04a2a;}
+  hr{border:none;border-top:1.5px solid rgba(36,31,26,.2);margin:50px 0 0;}
+  @media(max-width:680px){.grid,.two{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<div class="bar"><div style="display:flex;align-items:flex-start;gap:5px;"><span class="logo">money<span class="p">printer</span><span class="ai">.ai</span></span><span style="color:#06B6D4;font-size:13px;margin-top:2px;">&#10022;</span></div></div>
+
+<div class="wrap" style="padding:50px 28px 80px;">
+
+  <div class="kick">INTERNAL &middot; FUNNEL INDEX</div>
+  <h1 style="font-size:44px;line-height:1.04;margin:14px 0 6px;">Pick a funnel path.</h1>
+  <p style="font-size:16px;color:#6a5f4e;max-width:600px;margin:0 0 38px;">Two ad angles (greed + AI), each in a short MVP landing and a long-form sales letter. All four feed the same shared flow: diagnostic &rarr; 90-day plan &rarr; strategy call.</p>
+
+  <!-- THE FOUR LANDING PATHS -->
+  <div class="kick" style="margin-bottom:14px;">01 &middot; LANDING VARIANTS</div>
+  <div class="grid">
+    <a class="card" href="mvp-greed.html"><span class="tag greed">GREED &middot; SHORT</span><h3>The money printer is open</h3><p>MVP greed landing. Fast hook, the agent printing, straight to the number.</p><div class="go">OPEN &rarr;</div></a>
+    <a class="card" href="mvp-ai.html"><span class="tag ai">AI / RYAN &middot; SHORT</span><h3>An AI that prints money</h3><p>MVP AI landing. F1 + trading authority, Ryan as the mechanism.</p><div class="go">OPEN &rarr;</div></a>
+    <a class="card" href="moneyprinter-longform-greed.html"><span class="tag greed">GREED &middot; LONG</span><h3>The money printer is open &mdash; long copy</h3><p>Full sales letter, greed angle. One smooth flowing read, no section headers.</p><div class="go">OPEN &rarr;</div></a>
+    <a class="card" href="moneyprinter-longform-ai.html"><span class="tag ai">AI / RYAN &middot; LONG</span><h3>An AI that prints money &mdash; long copy</h3><p>Full sales letter, AI angle. One smooth flowing read, no section headers.</p><div class="go">OPEN &rarr;</div></a>
+  </div>
+
+  <!-- THE SHARED FLOW -->
+  <div class="kick" style="margin:46px 0 14px;">02 &middot; THE SHARED FLOW (after any landing)</div>
+  <a class="step" href="../strategy/moneyprinter-diagnostic-flow.html"><span class="num">01</span><div><div class="lab">DIAGNOSTIC</div><div style="font-size:17px;font-weight:600;">What's your number? + 4 questions</div><div style="font-size:13px;color:#6a5f4e;">Greed-first slider, then the agent works live and shows the opportunity number.</div></div></a>
+  <div class="arrow">&darr;</div>
+  <a class="step" href="../strategy/moneyprinter-90day-roadmap.html"><span class="num">02</span><div><div class="lab">THE PLAN</div><div style="font-size:17px;font-weight:600;">Your 90-day roadmap, printed live</div><div style="font-size:13px;color:#6a5f4e;">The full plan revealed section by section. The aha. The lead magnet.</div></div></a>
+  <div class="arrow" style="color:#0c8f66;">&darr; &nbsp;<span style="font-size:11px;">QUALIFIED ($5k/mo+) ONLY</span></div>
+  <a class="step" style="border-color:#0a7355;box-shadow:6px 6px 0 #0c8f66;" href="../strategy/moneyprinter-book-call.html"><span class="num" style="background:#0c8f66;color:#f4efe0;">03</span><div><div class="lab" style="color:#0c8f66;">CONVERSION</div><div style="font-size:17px;font-weight:600;">Strategy call with a strategist</div><div style="font-size:13px;color:#6a5f4e;">They show you how to apply it and build the first system live.</div></div></a>
+
+  <div style="margin-top:16px;font:11px 'Space Mono',monospace;line-height:1.8;color:#9a8e74;">
+    Full assembled hub: <a href="../strategy/moneyprinter-funnel.html" style="color:#5e2d2d;border-bottom:1.5px solid #5e2d2d;">moneyprinter-funnel.html</a> &nbsp;&middot;&nbsp; Under the gate ($5k/mo and below): plan emailed + waitlist, no 1:1 call.
+  </div>
+
+  <hr>
+
+  <!-- BRAND GUIDELINE -->
+  <div class="kick" style="margin:46px 0 6px;">03 &middot; BRAND GUIDELINE (SHORT)</div>
+  <h2>Early-2000s community bank that prints your money.</h2>
+  <p style="font-size:15px;color:#6a5f4e;max-width:640px;margin:6px 0 26px;">Warm, light, institutional-with-a-wink, Y2K dot-matrix. Premium, never arcade. The bank framing buys trust; the Y2K layer gives the wink. <strong>Curiosity comes from the design; greed and AI come from the copy.</strong></p>
+
+  <div class="kick" style="margin-bottom:10px;">PALETTE</div>
+  <div class="sw" style="margin-bottom:30px;">
+    <div class="chip"><div class="col" style="background:#e9e3d3;"></div><div class="meta">NOTE CREAM<span>#e9e3d3 &middot; ground</span></div></div>
+    <div class="chip"><div class="col" style="background:#b7a888;"></div><div class="meta">HALFTONE TAUPE<span>#b7a888 &middot; mesh</span></div></div>
+    <div class="chip"><div class="col" style="background:#c0512a;"></div><div class="meta">MOD RUST<span>#c0512a &middot; labels</span></div></div>
+    <div class="chip"><div class="col" style="background:#5e2d2d;"></div><div class="meta">TELLER MAROON<span>#5e2d2d &middot; structure</span></div></div>
+    <div class="chip"><div class="col" style="background:#0c8f66;"></div><div class="meta">CURRENCY GREEN<span>#0c8f66 &middot; money</span></div></div>
+    <div class="chip"><div class="col" style="background:#E5B567;"></div><div class="meta">SEAL GOLD<span>#E5B567 &middot; foil only</span></div></div>
+    <div class="chip"><div class="col" style="background:#06B6D4;"></div><div class="meta">ELECTRIC TEAL<span>#06B6D4 &middot; the AI</span></div></div>
+    <div class="chip"><div class="col" style="background:#241f1a;"></div><div class="meta" style="color:#f4efe0;background:#241f1a;">INK<span style="color:#b7a888;">#241f1a &middot; text</span></div></div>
+  </div>
+
+  <div class="two" style="margin-bottom:16px;">
+    <div class="panel">
+      <h4>TYPE</h4>
+      <li style="font-family:'Libre Caslon Display',serif;font-size:20px;">Headlines &mdash; engraved serif (Caslon / Tiempos)</li>
+      <li style="font-family:'Space Mono',monospace;">Data, labels, counters &mdash; monospace</li>
+      <li>Body &mdash; clean sans (reads 2026, not cosplay)</li>
+    </div>
+    <div class="panel">
+      <h4>MOTION</h4>
+      <li>Input top &rarr; machine works &rarr; value prints out, number ticks up</li>
+      <li>Loaders are printing. Never a spinner.</li>
+      <li>Numbers count up from zero (odometer). Reveals print line-by-line.</li>
+      <li>Stepped &amp; mechanical Y2K. No smooth modern eases.</li>
+    </div>
+  </div>
+
+  <div class="two">
+    <div class="panel yes">
+      <h4 style="color:#0c8f66;">DO</h4>
+      <li><b>&#10003;</b> Premium, warm, mechanical, cohesive</li>
+      <li><b>&#10003;</b> Bank UX language: Window 01, Now Serving, member-owned, gold seal</li>
+      <li><b>&#10003;</b> Mascot: chunky Y2K teller-bot, torso is a printer, treads, no name</li>
+      <li><b>&#10003;</b> Hard offset shadows (4&ndash;7px, no blur), 2px ink borders, squared corners</li>
+      <li><b>&#10003;</b> It prints CASH</li>
+    </div>
+    <div class="panel no">
+      <h4 style="color:#b04a2a;">DON'T</h4>
+      <li><b>&times;</b> Arcade, meme, slot-machine, neon</li>
+      <li><b>&times;</b> Matrix code rain, floating shapes (globe, arrows)</li>
+      <li><b>&times;</b> Dark-navy SaaS command-center</li>
+      <li><b>&times;</b> Smooth modern fades / soft eases</li>
+      <li><b>&times;</b> Dry deadpan-bank copy (copy stays hot)</li>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top:16px;">
+    <h4>VOICE</h4>
+    <li>Greed leads, curiosity pulls, FOMO frames &mdash; everything hangs off the user's number.</li>
+    <li>AI is the mechanism, named via Ryan as credibility and "why now." Revealed progressively, never the headline.</li>
+    <li>North star: Yield Farming "money printer" VSL energy (greedy, blunt). Not deadpan-bank.</li>
+    <li>Compliance: income only in third-person case studies; user states their own number; sell the deliverable, not a promised result; every claim carries a number.</li>
+  </div>
+
+  <div style="margin-top:24px;font:11px 'Space Mono',monospace;line-height:1.8;color:#9a8e74;">
+    Canonical refs &middot; <a href="../strategy/money-printer-bank-y2k-hero-v2.html" style="color:#5e2d2d;border-bottom:1.5px solid #5e2d2d;">hero-v2 (locked world)</a> &middot; <a href="../strategy/money-printer-mascot-v2.html" style="color:#5e2d2d;border-bottom:1.5px solid #5e2d2d;">mascot-v2</a> &middot; full brief: strategy/money-printer-brand-brief-tldr.md
+  </div>
+
+</div>
+</body>
+</html>
